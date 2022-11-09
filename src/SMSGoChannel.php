@@ -33,7 +33,6 @@ class SMSGoChannel
         } else {
             $to = $this->formatGlobalPhoneNumber($phone);
         }
-        dd('asd', $to);
 
         if (! method_exists($notification, 'toSMSGo')) {
             throw new InvalidArgumentException('Notification does not have a toSMSGo method');
