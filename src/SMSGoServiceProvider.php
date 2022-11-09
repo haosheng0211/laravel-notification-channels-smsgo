@@ -12,7 +12,7 @@ class SMSGoServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind(SMSGo::class, function ($app) {
-            return new SMSGo(new Client(), $app['config']['services.smsgo']);
+            return new SMSGo(new Client(), $app['config']['services.smsgo'] ?? []);
         });
 
         Notification::resolved(function (ChannelManager $service) {
